@@ -70,6 +70,12 @@ The environment consists of an on-premises enterprise-style network connected to
 - SSH bastion / ProxyCommand administration
 - Ansible management of cloud Linux systems
 
+#### AWS / Hybrid Cloud Architecture
+
+![Main HomeLab AWS Hybrid Cloud Architecture](aws-hybrid-cloud-architecture.png)
+
+*AWS hybrid-cloud architecture for Main HomeLab, showing a segmented VPC with public and private subnets, a public EC2 bastion host, a private EC2 instance with no public IPv4 address, Internet Gateway routing for the public subnet, S3 Gateway Endpoint access for the private subnet, and Ansible administration through SSH ProxyCommand.*
+
 ## Network Segmentation
 
 | VLAN | Purpose | Network |
