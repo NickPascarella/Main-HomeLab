@@ -2,6 +2,12 @@
 # Main HomeLab — Enterprise Linux & Hybrid Cloud Infrastructure
 
 > A hands-on enterprise-style infrastructure environment built to develop and demonstrate practical skills in Linux administration, networking, automation, security, observability, backup and recovery, and AWS hybrid cloud technologies.
+>
+> ## Infrastructure Architecture
+
+![Main HomeLab Enterprise Infrastructure Architecture](main-homelab-architecture.png)
+
+*Main HomeLab architecture showing the on-premises segmented network, Linux infrastructure, pfSense perimeter routing, Cisco switching, monitoring platform, DMZ services, and AWS hybrid-cloud environment.*
 
 ## Project Overview
 
