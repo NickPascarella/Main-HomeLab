@@ -52,6 +52,12 @@ The environment consists of an on-premises enterprise-style network connected to
 - Centralized infrastructure dashboards
 - Metrics, logs, service-health monitoring, and alerting
 
+#### Monitoring & Logging Architecture
+
+![Main HomeLab Monitoring and Logging Architecture](monitoring-logging-architecture.png)
+
+*Centralized observability architecture for the Main HomeLab. Prometheus on server01 collects infrastructure metrics from Node Exporter, Grafana provides visualization, Alertmanager handles alerting, and Grafana Alloy forwards system logs from server01 and server02 to Loki for centralized log analysis.*
+
 ### AWS Hybrid Cloud
 
 - Amazon VPC
