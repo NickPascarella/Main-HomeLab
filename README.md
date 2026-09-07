@@ -21,6 +21,21 @@ Rather than focusing on isolated exercises, the project was built incrementally 
 
 The environment consists of an on-premises enterprise-style network connected to AWS resources through controlled Internet-based administrative access.
 
+## Technical Case Studies
+
+The Main HomeLab is documented through focused technical case studies covering the design, implementation, validation, and troubleshooting of the environment.
+
+| Case Study | Focus |
+|---|---|
+| [Networking & Security](docs/networking-security.md) | Cisco VLANs, 802.1Q trunking, Layer 3 routing, ACL segmentation, pfSense integration, and DMZ architecture |
+| [Linux Administration](docs/linux-administration.md) | Rocky Linux and Amazon Linux administration, systemd, networking, SSH, package management, filesystems, permissions, and NFS |
+| [Automation & Configuration Management](docs/automation.md) | Ansible inventory design, playbooks, idempotency, SSH key authentication, bastion administration, and hybrid multi-host management |
+| [Monitoring & Logging](docs/monitoring-logging.md) | Prometheus, Grafana, Node Exporter, Alertmanager, Loki, Alloy, centralized metrics, logging, and observability troubleshooting |
+| [Backup & Recovery](docs/backup-recovery.md) | Automated rsync backups, centralized NFS storage, systemd timers, Ansible validation, and recovery planning |
+| [AWS & Hybrid Cloud](docs/aws-hybrid-cloud.md) | AWS VPC networking, public/private subnets, EC2, bastion-based administration, IAM, IMDSv2, S3 Gateway Endpoint, and CloudWatch |
+
+Each case study includes implementation details, validation evidence, and troubleshooting examples from the working lab environment.
+
 ### On-Premises Infrastructure
 
 - Cisco Catalyst 3850 Layer-3 core switch
