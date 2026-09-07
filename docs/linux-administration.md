@@ -113,6 +113,24 @@ The project included:
 
 The private AWS instance does not have a public IPv4 address. Administration reaches it through `aws-server01` using SSH ProxyCommand rather than exposing the private system directly to the Internet.
 
+The resulting administrative path is:
+
+```text
+On-Premises Administration
+        │
+        │ SSH
+        ▼
+aws-server01
+Public Subnet
+10.100.10.132
+        │
+        │ SSH ProxyCommand
+        ▼
+aws-server02
+Private Subnet
+10.100.20.212
+```
+
 Detailed AWS access architecture is documented separately in the AWS Hybrid Cloud section.
 
 ## Package and Patch Management
@@ -140,7 +158,7 @@ Linux storage administration includes both local filesystems and centralized NFS
 ```text
 server01:/srv/nfs/shared
         │
-        │ NFSv4
+        │ NFSv4.2
         ▼
 server02:/mnt/shared
 ```
@@ -205,18 +223,38 @@ This provided a consistent way to verify that configuration changes resulted in 
 
 ### Hybrid Linux Administration
 
-The portfolio includes validation across the complete Linux environment:
+![Hybrid Linux administration validation](../evidence/linux/hybrid-linux-validation.png)
+
+*Centralized validation from server01 across the Main HomeLab Linux environment. The output demonstrates administration of Rocky Linux 10 systems on-premises and Amazon Linux 2023 systems in AWS, including hostname, operating-system, kernel, and uptime information.*
+
+The validation demonstrates administration across four managed Linux systems:
+
+- `server01` — Rocky Linux 10
+- `server02` — Rocky Linux 10
+- `aws-server01` — Amazon Linux 2023
+- `aws-server02` — Amazon Linux 2023
+
+This provides hands-on experience administering Linux across both on-premises and cloud infrastructure.
+
+### NFS Storage Validation
+
+![Linux NFS storage validation](../evidence/linux/linux-nfs-storage-validation.png)
+
+*Linux storage validation from server02 showing the NFSv4.2 mount of `server01:/srv/nfs/shared` at `/mnt/shared`, along with filesystem capacity and utilization.*
+
+The validation confirms centralized network storage between the Linux servers:
 
 ```text
-aws-server01 — Amazon Linux 2023
-aws-server02 — Amazon Linux 2023
-server01      — Rocky Linux 10
-server02      — Rocky Linux 10
+server01
+/srv/nfs/shared
+      │
+      │ NFSv4.2
+      ▼
+server02
+/mnt/shared
 ```
 
-Evidence collected from the managed systems validates operating-system versions, kernels, hostnames, uptime, and remote administrative access.
-
-> Screenshot evidence will be added here from the completed Main HomeLab validation set.
+The `findmnt` and `df` output verifies the active mount, NFS protocol, server and client addressing, mount options, and available filesystem capacity.
 
 ## Troubleshooting Case Study — Service Reachability
 
