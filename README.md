@@ -2,7 +2,7 @@
 # Main HomeLab — Enterprise Linux & Hybrid Cloud Infrastructure
 
 > A hands-on enterprise-style infrastructure environment built to develop and demonstrate practical skills in Linux administration, networking, automation, security, observability, backup and recovery, and AWS hybrid cloud technologies.
->
+
 > ## Infrastructure Architecture
 
 ![Main HomeLab Enterprise Infrastructure Architecture](main-homelab-architecture.png)
@@ -134,7 +134,7 @@ Inter-VLAN routing is performed by the Cisco Catalyst 3850, with ACLs providing 
 
 ## Project Documentation
 
-Detailed documentation and implementation evidence will be available throughout this repository, including:
+Detailed documentation and implementation evidence are available throughout this repository, including:
 
 - Network architecture and security
 - Linux administration
